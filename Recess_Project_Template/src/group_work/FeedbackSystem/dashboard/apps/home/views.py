@@ -31,6 +31,9 @@ def pages(request):
             return HttpResponseRedirect(reverse('admin:index'))
         context['segment'] = load_template
 
+        # retrieve data
+        # data = StudentsModel.objects.all() 
+
         html_template = loader.get_template('home/' + load_template)
         return HttpResponse(html_template.render(context, request))
 
