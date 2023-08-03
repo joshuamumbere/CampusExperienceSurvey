@@ -15,8 +15,10 @@ from decouple import config
 from unipath import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).parent
-CORE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# BASE_DIR = Path(__file__).parent
+# CORE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
+CORE_DIR = BASE_DIR
 
 
 # Quick-start development settings - unsuitable for production
@@ -40,7 +42,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'FeedbackSystem.dashboard.apps.home'
+    'FeedbackSystem.dashboard.apps.home',
+
+    #own apps
+    'FeedbackSystem.userside.Authentication.apps',
+    'crispy_forms',
+    'bootstrap4',
+
 ]
 
 MIDDLEWARE = [
@@ -55,15 +63,16 @@ MIDDLEWARE = [
 
 # ROOT_URLCONF = 'core.urls'
 ROOT_URLCONF = "FeedbackSystem.urls"
-LOGIN_REDIRECT_URL = "home"  # Route defined in home/urls.py
-LOGOUT_REDIRECT_URL = "home"  # Route defined in home/urls.py
+LOGIN_REDIRECT_URL = "userside"  # Route defined in home/urls.py
+LOGOUT_REDIRECT_URL = "userside"  # Route defined in home/urls.py
 TEMPLATE_DIR = os.path.join(CORE_DIR, "FeedbackSystem/dashboard/apps/templates")  # ROOT dir for templates
+TEMPLATE_DIR_USERSIDE = os.path.join(CORE_DIR, "FeedbackSystem/userside/Authentication/apps/templates")
 # ROOT_URLCONF = "FeedbackSystem.urls"
 
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [TEMPLATE_DIR],
+        "DIRS": [TEMPLATE_DIR, TEMPLATE_DIR_USERSIDE],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -127,10 +136,22 @@ STATIC_ROOT = os.path.join(CORE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(CORE_DIR, 'FeedbackSystem/dashboard/apps/static')),
+# STATICFILES_DIRS = (
+#     os.path.join(CORE_DIR, 'FeedbackSystem/dashboard/apps/static', 'FeedbackSystem/userside/Authentication/static')),
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'FeedbackSystem/dashboard/apps/static'),
+    os.path.join(BASE_DIR, 'FeedbackSystem/userside/Authentication/static'),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_REDIRECT_URL = 'userside:home'
+
+# LOGIN_URL = 'login'
+LOGIN_URL = 'userside:login'
