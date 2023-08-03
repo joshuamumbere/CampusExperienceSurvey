@@ -63,8 +63,8 @@ MIDDLEWARE = [
 
 # ROOT_URLCONF = 'core.urls'
 ROOT_URLCONF = "FeedbackSystem.urls"
-LOGIN_REDIRECT_URL = "userside"  # Route defined in home/urls.py
-LOGOUT_REDIRECT_URL = "userside"  # Route defined in home/urls.py
+LOGIN_REDIRECT_URL = ""  # Route defined in home/urls.py
+LOGOUT_REDIRECT_URL = ""  # Route defined in home/urls.py  we need this to remain empty so the the different logout urls are executed
 TEMPLATE_DIR = os.path.join(CORE_DIR, "FeedbackSystem/dashboard/apps/templates")  # ROOT dir for templates
 TEMPLATE_DIR_USERSIDE = os.path.join(CORE_DIR, "FeedbackSystem/userside/Authentication/apps/templates")
 # ROOT_URLCONF = "FeedbackSystem.urls"
@@ -151,7 +151,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGIN_REDIRECT_URL = 'userside:home'
+LOGIN_REDIRECT_URL = 'home_user'
 
 # LOGIN_URL = 'login'
-LOGIN_URL = 'userside:login'
+LOGIN_URL = 'login_user'

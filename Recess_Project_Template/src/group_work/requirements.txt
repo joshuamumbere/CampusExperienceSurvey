@@ -10,3 +10,4 @@ sqlparse
 toml
 Unipath
 whitenoise
+crispy_forms
