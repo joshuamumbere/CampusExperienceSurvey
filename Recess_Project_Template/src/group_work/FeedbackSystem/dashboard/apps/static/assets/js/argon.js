@@ -802,8 +802,8 @@ function initMap() {
         title: 'Hello World!'
     });
 
-    var contentString = '<div class="info-window-content"><h2>Argon Dashboard</h2>' +
-        '<p>A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</p></div>';
+    var contentString = '<div class="info-window-content"><h2>Feedback Dashboard</h2>' +
+        '<p>A dashboard to analyze students satisfaction with school facilities</p></div>';
 
     var infowindow = new google.maps.InfoWindow({
         content: contentString
