@@ -19,6 +19,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/dashboard", admin.site.urls),          # Django admin route
+    path('', include('FeedbackSystem.userside.Authentication.urls')),
     path("", include("FeedbackSystem.dashboard.apps.authentication.urls")), # Auth routes - login / register
-    path("", include("FeedbackSystem.dashboard.apps.home.urls"))             # UI Kits Html files
+    path("", include("FeedbackSystem.dashboard.apps.home.urls")),           # UI Kits Html files
+    
 ]
