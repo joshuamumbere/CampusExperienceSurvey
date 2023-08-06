@@ -49,6 +49,9 @@ INSTALLED_APPS = [
     'crispy_forms',
     'bootstrap4',
 
+    #forms
+    'FeedbackSystem.forms.app',
+
 ]
 
 MIDDLEWARE = [
@@ -67,12 +70,13 @@ LOGIN_REDIRECT_URL = ""  # Route defined in home/urls.py
 LOGOUT_REDIRECT_URL = ""  # Route defined in home/urls.py  we need this to remain empty so the the different logout urls are executed
 TEMPLATE_DIR = os.path.join(CORE_DIR, "FeedbackSystem/dashboard/apps/templates")  # ROOT dir for templates
 TEMPLATE_DIR_USERSIDE = os.path.join(CORE_DIR, "FeedbackSystem/userside/Authentication/apps/templates")
+TEMPLATE_DIR_FORMS = os.path.join(CORE_DIR, "FeedbackSystem/forms/app/templates")
 # ROOT_URLCONF = "FeedbackSystem.urls"
 
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [TEMPLATE_DIR, TEMPLATE_DIR_USERSIDE],
+        "DIRS": [TEMPLATE_DIR, TEMPLATE_DIR_USERSIDE, TEMPLATE_DIR_FORMS],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -141,6 +145,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'FeedbackSystem/dashboard/apps/static'),
     os.path.join(BASE_DIR, 'FeedbackSystem/userside/Authentication/static'),
+    os.path.join(BASE_DIR, 'FeedbackSystem/forms/app/static'),
 ]
 
 # Default primary key field type
@@ -152,6 +157,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'home_user'
+
 
 # LOGIN_URL = 'login'
 LOGIN_URL = 'login_user'
