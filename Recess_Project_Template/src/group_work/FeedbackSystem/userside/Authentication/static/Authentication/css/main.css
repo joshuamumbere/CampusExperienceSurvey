@@ -1,9 +1,10 @@
   #bg{
     /* background-color: blue; */
     background-repeat: no-repeat;
+    background-image: url(images/mukhouse.jpg) ;
     background-size: cover;
     background-attachment: fixed;
-    background-image: "{% static 'Authentication/images/makerere.png' %}" ;
+    
   }
   #main-navbar{
     color: white;
@@ -48,7 +49,7 @@
     font-size: 15px;
     border-radius: 6px;
     background-color: #ffcab1;
-    box-shadow: 0 0 10px #ff8248, 0 0 4px #ff8248,0 0 80px #ff8248;
+    box-shadow: 0 0 10px #051094, 0 0 4px #051094,0 0 80px #051094;
     transition-delay: 0.1s;
     text-decoration: none;
     border-radius: 9px;
@@ -73,7 +74,7 @@
     font-size: 15px;
     border-radius: 6px;
     background-color: #ffcab1;
-    box-shadow: 0 0 10px #ff8248, 0 0 4px #ff8248,0 0 80px #ff8248;
+    box-shadow: 0 0 10px #051094, 0 0 4px #051094,0 0 80px #051094;
     transition-delay: 0.1s;
     text-decoration: none;
     border-radius: 9px;
@@ -148,7 +149,7 @@
   .login-html .sign-in:checked + .tab,
   .login-html .sign-up:checked + .tab{
   color:#fff;
-  border-color:#ff8248;
+  border-color:#051094;
   }
   .login-form{
   min-height:345px;
@@ -182,7 +183,7 @@
   font-size:12px;
   }
   .login-form .group .button{
-  background:#ff8248;
+  background:#051094;
   }
   .login-form .group label .icon{
   width:15px;
@@ -216,7 +217,7 @@
   color:#fff;
   }
   .login-form .group .check:checked + label .icon{
-  background:#ff8248;
+  background:#051094;
   }
   .login-form .group .check:checked + label .icon:before{
   transform:scale(1) rotate(45deg);
@@ -378,7 +379,7 @@
     text-transform: uppercase;
     text-decoration: none;
     font-size: 13px;
-    background-color: #fd5e19;
+    background-color: #051094;
     overflow: hidden;
     transition: 0.2s;
   }
@@ -388,7 +389,7 @@
     font-size: 15px;
     border-radius: 6px;
     background-color: #ffcab1;
-    box-shadow: 0 0 10px #ff8248, 0 0 4px #ff8248,0 0 80px #ff8248;
+    box-shadow: 0 0 10px #051094, 0 0 4px #051094,0 0 80px #051094;
     transition-delay: 0.1s;
     text-decoration: none;
     border-radius: 9px;

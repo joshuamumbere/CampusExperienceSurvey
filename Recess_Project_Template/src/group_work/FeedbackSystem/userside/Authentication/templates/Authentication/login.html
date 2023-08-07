@@ -8,32 +8,32 @@
 
 {% block content %}
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <div class="container" style="margin-top: 30px;">
-        <div>
-            <div>
-                <div>
-                    <div>
-
+    <div class="container mt--8 pb-5" style="margin-top: 30px;">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-7">
+              <div class="card bg-secondary shadow border-0">
+                <div class="card-body px-lg-5 py-lg-5" style="color: white;" >
+                    <!-- <div class="text-center text-muted mb-4"> -->
                         <form action="" method="POST">
                             {% csrf_token %}
-                            <fieldset class="form-group" >
-          <legend class="border-bottom mb-4" style="color: black;">Sign In Now</legend>
-          {{ form|crispy }}
-      </fieldset>
-      <div class="form-group" id="signup-button">
-          <button class="btn "><a class="btn" style="color: white; background-color: #fd5e14;"type="submit" href="{% url 'course_feedback' %}" id="body-link-row">Log In</a></button>
-      </div>
-      <div class="form-group">
-          <small class="text-muted ml-3" >Don't have an account yet? <a href="{% url 'home_user' %}">Sign Up Today</a></small>
-      </div>
+                            <fieldset class="form-group mb-3" >
+                                <legend class="border-bottom mb-4" style="color: black;">Log In Now</legend>
+                                {{ form|crispy }}
+                            </fieldset>
+                            <div class="form-group" id="signup-button">
+                                <button class="btn "><a class="btn" style="color: white; background-color: #051094;"type="submit" href="{% url 'course_feedback' %}" id="body-link-row">Log In</a></button>
+                            </div>
+                            <div class="form-group">
+                                <small class="text-muted ml-3" >Don't have an account yet? <a href="{% url 'home_user' %}">Sign Up Today</a></small>
+                            </div>
 
-      <div class="form-group">
-        <button ><a href="{% url 'login' %}">LOG IN AS AN ADMIN</a></button></small>
+                            <div class="form-group">
+                                <button ><a href="{% url 'login' %}">LOG IN AS AN ADMIN</a></button></small>
+                            </div>
+                            </form>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
     </div>
-    </form>
-</div>
-</div>
-</div>
-</div>
-</div>
 {% endblock %}</title>
