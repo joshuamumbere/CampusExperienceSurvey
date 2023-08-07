@@ -1,23 +1,147 @@
 {% extends 'Authentication/base.html' %}
 {% load static %}
 {% block content %}
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <div class="container"  >
-             <div class="row g-0" style="background-image: url('/static/images/mukhouse.jpg') ; background-size: cover;">
-                <div class="col-sm-6 col-md-8" id="header-text">
-                  <h1 id="header-h1" style="color: black;">Makerere University <br>Feedback Form</h1>
-                  <p id="header-paragraph" style="color: black;">Where your feedback matters  <br> to us.</p>
-                  <a class="btn" style="color: white; background-color: #051094;"type="submit" href="{% url 'home' %}" id="body-link-row">Give us your feedback</a>
-                  <!-- <div class="col-6 col-md-4" id="header-image">
-                    <img src="{% static 'Authentication/images/mukengineering.jpg' %}" alt="">
-                  </div> -->
-                </div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-                
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+        <img src="{% static 'Authentication/images/mukengineering.jpg' %}" alt="Slide 1" class="d-block w-100 img-fluid" style=" max-height:300px;">
+
+        </div>
+        <div class="carousel-item ">
+          <img src="{% static 'Authentication/images/mukctf.jpg' %}" alt="Slide 4" class="img-fluid d-block w-100" style=" max-height: 300px;">
+
+         </div>
+         <div class="carousel-item ">
+          <img src="{% static 'Authentication/images/mukhouse.jpg' %}" alt="Slide 4" class="img-fluid d-block w-100" style=" max-height:300px;">
+
+         </div>
+         <div class="carousel-item ">
+          <img src="{% static 'Authentication/images/muksenate.jpg' %}" alt="Slide 4" class="img-fluid d-block w-100" style=" max-height: 300px;">
+
+         </div>
+         <a class="carousel-control-prev" href="#" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+         </a>
+         <a class="carousel-control-next" href="#" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+         </a>
+
+      </div>
+    </div>
+
+    <!-- <style>
+      #wrapper{
+        display: flex;
+        flex-direction: row-reverse;
+      }
+      #sidebar{
+        width: 250px;
+        position: sticky;
+        /* right: 0; */
+        top:0;
+        /* height:100vh; */
+        background-color: #333;
+        color:white;
+        overflow-y: auto;
+        padding: 20px;
+
+      }
+      #content{
+        padding: 20px;
+        flex: 1;
+      }
+     </style>
+     <div id="wrapper">
+      <div class="bg-dark border-left" id="sidebar" >
+        
+        <div class="list-group list-group-flush">
+          <a href="#section1" class="list-group-item list-group-item-action bg-dark text-white">Administration</a>
+          <a href="#section1" class="list-group-item list-group-item-action bg-dark text-white">Students</a>
+          <a href="#section1" class="list-group-item list-group-item-action bg-dark text-white">Facilities</a>
+          <a href="#section1" class="list-group-item list-group-item-action bg-dark text-white">Courses</a>
+          <a href="#section1" class="list-group-item list-group-item-action bg-dark text-white">Fees Structure</a>
+
+      </div> -->
+     
+
+   
+    </div>
+    <div class = "text-center" >
+    <div class="container" id="content" >
+
+             <div class="row g-0 container-fluid" >
+                <div class="col-sm-6 col-md-8 " id="header-text">
+                  <!-- "col-sm-6 col-md-8 " col-12 -->
+                  <div class="col-6 col-md-4" id="header-image">
+                    <img src="{% static 'Authentication/images/logo.png' %}" alt="">
+
+                  </div>
+                  <h1 id="header-h1" style="color: black;" >Develop your potential with us. </h1>
+                  <div class="col-12"><p id="header-paragraph" style="color: black;">At Makerere University,we provide you with over the top education where learners are exposed to different modes of learning that equip them with the skills they need for the outside world.
+                  We also prioritise student feedback in order to continuously adjust our teaching methods to those suitable to the learners.</p> 
+                  <p id="header-paragraph" style="color: black;">We therefore welcome you to our feedback website where 
+                  you can give us your opinions on the teaching methods of our institution.
+                </p>
                 <div class="col-6 col-md-4" id="header-image">
                   <img src="{% static 'Authentication/images/makerere.png' %}" alt="">
                 </div>
+                  </div>
+                  <p id="header-paragraph" style="color: black;">Where your feedback matters  <br> to us.</p>
+                  <a class="btn" style="color: white; background-color: #051094;"type="submit" href="{% url 'home' %}" id="body-link-row">Visit our official website</a>
+                  
+                </div>
+
+                
+                <!-- <div class="col-6 col-md-4" id="header-image">
+                  <img src="{% static 'Authentication/images/makerere.png' %}" alt="">
+                </div> -->
               </div>
             </div>
+          </div>
+        </div> 
+            
+
+           <script src="https:/ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.js"></script>
+
+          <script>
+            $(document).ready(function(){
+              $('.carousel').carousel();
+            });
+          </script>
+
+          <footer class="bg-dark py-4">
+            <div class="container">
+                <div class=row>
+                  <div class="col-md-4">
+                    <h5 style="color: white;">Home</h5>
+                    <p><a href="/" class="text-light">Visit our home page</a></p>
+                    <p><a href="/" class="text-light">About us</a></p>
+                  </div>
+                  <div class="col-md-4">
+                    <h5 style="color: white;">Contact</h5>
+                    <p><a href="mailto:info@example.com" class="text-light">Email:mukofficial@gmail.comm</a></p>
+                    <p class="text-light">Phone: 03319967888</p>
+                  </div>
+                  <div class="col-md-4">
+                    <h5 style="color: white;">Social Media</h5>
+                    <p><a href="/" class="text-light">Visit our Facebook page</a></p>
+                    <p><a href="/" class="text-light">Service blog</a></p>
+                  </div>
+                 
+                </div>
+            </div>
+
+          </footer>
+      
 
 {% endblock content %}

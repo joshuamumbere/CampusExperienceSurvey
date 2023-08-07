@@ -1,11 +1,43 @@
   #bg{
-    /* background-color: blue; */
+    /* background-color : #B2D3C2; */
     background-repeat: no-repeat;
-    background-image: url(images/mukhouse.jpg) ;
+    /* background-image: url(images/mukhouse.jpg) ; */
     background-size: cover;
     background-attachment: fixed;
-    
+    /* B2D3C2 */
   }
+
+  /* the img slider */
+  /* .slider{
+    width: 100%;
+    height: 400px;
+    overflow:hidden;
+    position: relative;
+
+  }
+
+  .slider img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: slide 10s linear ;
+  }
+
+  @keyframes slide {
+    0%{
+      transform: translateX(0);
+    }
+    /* 25%{
+      transform: translateX(-100%);
+    }
+    50%{
+      transform: translateX(-200%); */
+    /* } */
+    100%{
+      transform: translateX(-100%);
+    }
+  } */
+
   #main-navbar{
     color: white;
     min-height: 14vh;
@@ -388,7 +420,7 @@
     color: #021f3b;
     font-size: 15px;
     border-radius: 6px;
-    background-color: #ffcab1;
+    background-color: #051094;
     box-shadow: 0 0 10px #051094, 0 0 4px #051094,0 0 80px #051094;
     transition-delay: 0.1s;
     text-decoration: none;

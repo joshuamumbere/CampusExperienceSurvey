@@ -15,7 +15,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans:wght@800&display=swap" rel="stylesheet">
 
   </head>
-  <body id="bg" style="background-image: url('/static/Authentication/images/mukhouse.jpg');">
+  <!-- style="background-image: url('/static/Authentication/images/mukhouse.jpg');" -->
+  <body id="bg" >
   {% load static %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="main-navbar">
         <div class="container">
@@ -25,10 +26,13 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="#">Makerere University</a>
-              <a class="nav-link" href="#">Gallery</a>
-              <a class="nav-link" href="#">Course</a>
-              <a class="nav-link" href="#">Form</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">MAKERERE UNIVERSITY</a>
+              <a class="nav-link" href="#">Administration</a>
+              <a class="nav-link" href="#">Students</a>
+              <a class="nav-link" href="#">Facilities</a>
+              <a class="nav-link" href="#">Fees Structure</a>
+
+
               
 
             </div>
