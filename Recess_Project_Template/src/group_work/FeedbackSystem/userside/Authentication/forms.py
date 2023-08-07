@@ -5,7 +5,17 @@ from django import forms
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
+    student_number = forms.CharField(max_length=10, required=True)  # Adjust max_length as needed
+    YEAR_CHOICES = [
+        ('One', 'Year One'),
+        ('Two', 'Year Two'),
+        ('Three', 'Year Three'),
+        ('Four', 'Year Four'),
+    ]
+    year = forms.ChoiceField(choices=YEAR_CHOICES, required=True)
+
+
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2']
+        fields = ['username', 'email', 'student_number','year','password1', 'password2']

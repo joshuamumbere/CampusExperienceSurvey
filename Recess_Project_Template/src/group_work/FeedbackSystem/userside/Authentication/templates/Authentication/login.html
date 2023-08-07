@@ -1,41 +1,36 @@
-
 {% extends 'Authentication/base.html' %}
 {% load crispy_forms_tags %}
 {% load static %}
 
-{% load crispy_forms_tags %}
-{% crispy form %}
-
 {% block content %}
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <div class="container mt--8 pb-5" style="margin-top: 30px;">
-        <div class="row justify-content-center">
-            <div class="col-lg-5 col-md-7">
-              <div class="card bg-secondary shadow border-0">
-                <div class="card-body px-lg-5 py-lg-5" style="color: white;" >
-                    <!-- <div class="text-center text-muted mb-4"> -->
-                        <form action="" method="POST">
-                            {% csrf_token %}
-                            <fieldset class="form-group mb-3" >
-                                <legend class="border-bottom mb-4" style="color: black;">Log In Now</legend>
-                                {{ form|crispy }}
-                            </fieldset>
-                            <div class="form-group" >
-                              <button class="btn ">
-                                   <a class="btn" style="color: white; background-color: #051094;"type="submit" href="{% url 'course_feedback' %}" id="body-link-row">Log In</a></small>
-                             </button>
-                            
-                            
-                            </div>
-                            <div class="form-group">
-                                <small class="text-muted ml-3" >Don't have an account yet? <a href="{% url 'home_user' %}">Sign Up Today</a></small>
-                            </div>
-
-                            <div class="form-group">
-                                <button  style="color: #051094;" ><a href="{% url 'login' %}">LOG IN AS AN ADMIN</a></button>
-                            </div>
-                            </form>
-                    <!-- </div> -->
+    
+    <div class="container-fluid" style="height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(to bottom, #051094, #9393C1);">
+        <div class="container mt--8 pb-5" style="margin-top: 30px;">
+            <div class="row justify-content-center">
+                <div class="col-7">
+                  <div class="card bg-secondary shadow border-0" >
+                     <div class="card-body px-lg-5 py-lg-5" style="color: white; background-color: rgb(149, 149, 193);" >
+                        <!-- <div class="text-center text-muted mb-4"> -->
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <fieldset class="form-group mb-3 " >
+                                    <legend class="border-bottom mb-4 text-center"  style="color: white;">Log In</legend>
+                                    {{ form|crispy }}
+                                </fieldset>
+                                <div class="form-group text-center" id="signup-button">
+                                    <button class="btn btn-sm"><a class="btn" style="color: white; background-color: #051094;"type="submit" href="{% url 'course_feedback' %}" id="body-link-row">Log In</a></button>
+                                </div>
+                                <div class="form-group text-center ">
+                                    <small >Don't have an account yet? <a href="{% url 'register_user' %}">Sign Up Today</a></small>
+                                </div>
+    
+                                <div class="form-group text-center">
+                                    <button><a href="{% url 'login_user' %}" style="color: rgb(41, 102, 225); ">LOG IN AS AN ADMIN</a></button></small>
+                                </div>
+                                </form>
+                        </div> 
+                    </div>
                 </div>
             </div>
         </div>
