@@ -20,15 +20,19 @@
                                 <legend class="border-bottom mb-4" style="color: black;">Log In Now</legend>
                                 {{ form|crispy }}
                             </fieldset>
-                            <div class="form-group" id="signup-button">
-                                <button class="btn "><a class="btn" style="color: white; background-color: #051094;"type="submit" href="{% url 'course_feedback' %}" id="body-link-row">Log In</a></button>
+                            <div class="form-group" >
+                              <button class="btn ">
+                                   <a class="btn" style="color: white; background-color: #051094;"type="submit" href="{% url 'course_feedback' %}" id="body-link-row">Log In</a></small>
+                             </button>
+                            
+                            
                             </div>
                             <div class="form-group">
                                 <small class="text-muted ml-3" >Don't have an account yet? <a href="{% url 'home_user' %}">Sign Up Today</a></small>
                             </div>
 
                             <div class="form-group">
-                                <button ><a href="{% url 'login' %}">LOG IN AS AN ADMIN</a></button></small>
+                                <button  style="color: #051094;" ><a href="{% url 'login' %}">LOG IN AS AN ADMIN</a></button>
                             </div>
                             </form>
                     <!-- </div> -->
