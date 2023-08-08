@@ -86,10 +86,12 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
             ],
         },
-    },
+    },  
 ]
 
 WSGI_APPLICATION = "FeedbackSystem.wsgi.application"
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 # Database
@@ -99,6 +101,7 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": "db.sqlite3",
+
     }
 }
 

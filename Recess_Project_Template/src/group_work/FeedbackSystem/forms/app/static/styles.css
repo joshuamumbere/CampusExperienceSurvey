@@ -1,0 +1,62 @@
+/* styles.css */
+.card {
+  border: none;
+}
+
+.card-title {
+  font-size: 24px;
+  color: #333;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 8px; /* Add margin between labels */
+}
+
+.form-control {
+  border-color: #cccccc;
+  margin-bottom: 15px; /* Add margin between form controls */
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  margin-top: 15px; /* Add margin above the button */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+.invalid-feedback {
+  display: block;
+  color: #dc3545;
+}
+
+/* Additional styles for better user interaction */
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+textarea.form-control {
+  resize: vertical;
+  margin-bottom: 15px; /* Add margin between textareas */
+}
+
+select.form-control {
+  appearance: none;
+  background-color: #f8f9fa;
+  background-image: url("{% static 'images/arrow-down.png' %}");
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  padding-right: 35px;
+  margin-bottom: 15px; /* Add margin between select dropdowns */
+}
+
+
