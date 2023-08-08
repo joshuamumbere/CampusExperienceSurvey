@@ -47,27 +47,28 @@
                 </tr>
               </thead>
               <tbody class="list">
+                {% for data in studentformdata %}
                 <tr>
                   <th scope="row">
                     <div class="media align-items-center">
                       <div class="media-body">
-                        <span class="name mb-0 text-sm">Birimumaaso Rogers</span>
+                        <span class="name mb-0 text-sm">{{data.username}}</span>
                       </div>
                     </div>
                   </th>
                   <td class="budget">
-                    birimumaaso14roja@gmail.com
+                    {{data.email}}
                   </td>
                   <td>
                     <span class="badge badge-dot mr-4">
-                      <span class="status">2100711851</span>
+                      <span class="status">{{data.student_number}}</span>
                     </span>
                   </td>
                   <td>
                     <div class="d-flex align-items-center">
                       <div>
                         <span class="badge badge-dot mr-4">
-                          <span class="status">YEAR 3</span>
+                          <span class="status">{{data.year}}</span>
                         </span>
                       </div>
                     </div>
@@ -85,6 +86,8 @@
                     </div>
                   </td>
                 </tr>
+                {% endfor %}
+                
               </tbody>
             </table>
           </div>
