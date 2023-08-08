@@ -1,109 +1,15 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container">
-    <h2>Campus Feedback</h2>
-    <form method="post" class="feedback-form">
-        {% csrf_token %}
-        <div class="row">
-            <div class="col-md-12">
-                <div class="question">
-                    <p>1. How satisfied were you with the campus facilities?</p>
-                    <div class="likert-scale">
-                        <input type="radio" name="q1" value="5" id="q1_5" required>
-                        <label for="q1_5">Very Satisfied</label>
-                        
-                        <input type="radio" name="q1" value="4" id="q1_4">
-                        <label for="q1_4">Satisfied</label>
-                        
-                        <input type="radio" name="q1" value="3" id="q1_3">
-                        <label for="q1_3">Neutral</label>
-                        
-                        <input type="radio" name="q1" value="2" id="q1_2">
-                        <label for="q1_2">Dissatisfied</label>
-                        
-                        <input type="radio" name="q1" value="1" id="q1_1">
-                        <label for="q1_1">Very Dissatisfied</label>
-                    </div>
-                </div>
-                <div class="question">
-                    <p>2. How clean and well-maintained were the campus facilities?</p>
-                    <div class="likert-scale">
-                        <input type="radio" name="q1" value="5" id="q1_5" required>
-                        <label for="q1_5">Very clean</label>
-                        
-                        <input type="radio" name="q1" value="4" id="q1_4">
-                        <label for="q1_4">Clean</label>
-                        
-                        <input type="radio" name="q1" value="3" id="q1_3">
-                        <label for="q1_3">Neutral</label>
-                        
-                        <input type="radio" name="q1" value="2" id="q1_2">
-                        <label for="q1_2">Dirty</label>
-                        
-                        <input type="radio" name="q1" value="1" id="q1_1">
-                        <label for="q1_1">Very Dirty</label>
-                    </div>
-                </div>
-                <div class="question">
-                    <p>3. How accessible were the campus resources such as library and labs?</p>
-                    <div class="likert-scale">
-                        <input type="radio" name="q1" value="5" id="q1_5" required>
-                        <label for="q1_5">Very Accessible</label>
-                        
-                        <input type="radio" name="q1" value="4" id="q1_4">
-                        <label for="q1_4">Accessible</label>
-                        
-                        <input type="radio" name="q1" value="3" id="q1_3">
-                        <label for="q1_3">Neutral</label>
-                        
-                        <input type="radio" name="q1" value="2" id="q1_2">
-                        <label for="q1_2">Unaccessible</label>
-                        
-                        <input type="radio" name="q1" value="1" id="q1_1">
-                        <label for="q1_1">Very Unaccessible</label>
-                    </div>
-                </div>
-                <div class="question">
-                    <p>4. How satisfied were you with the campus security measures?</p>
-                    <div class="likert-scale">
-                        <input type="radio" name="q1" value="5" id="q1_5" required>
-                        <label for="q1_5">Very Satisfied</label>
-                        
-                        <input type="radio" name="q1" value="4" id="q1_4">
-                        <label for="q1_4">Satisfied</label>
-                        
-                        <input type="radio" name="q1" value="3" id="q1_3">
-                        <label for="q1_3">Neutral</label>
-                        
-                        <input type="radio" name="q1" value="2" id="q1_2">
-                        <label for="q1_2">Dissatisfied</label>
-                        
-                        <input type="radio" name="q1" value="1" id="q1_1">
-                        <label for="q1_1">Very Dissatisfied</label>
-                    </div>
-                </div>
-                <div class="question">
-                    <p>5. How well were the campus facilities equipped with modern amenities?</p>
-                    <input type="radio" name="q1" value="5" id="q1_5" required>
-                        <label for="q1_5">Very Equipped</label>
-                        
-                        <input type="radio" name="q1" value="4" id="q1_4">
-                        <label for="q1_4">Equipped</label>
-                        
-                        <input type="radio" name="q1" value="3" id="q1_3">
-                        <label for="q1_3">Neutral</label>
-                        
-                        <input type="radio" name="q1" value="2" id="q1_2">
-                        <label for="q1_2">Inequipped</label>
-                        
-                        <input type="radio" name="q1" value="1" id="q1_1">
-                        <label for="q1_1">Very Inequipped </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary mt-3">Submit</button>
-    </form>
+  <h2>Campus Feedback</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
 </div>
 {% endblock %}
