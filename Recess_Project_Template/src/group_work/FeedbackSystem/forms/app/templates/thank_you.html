@@ -2,8 +2,11 @@
 
 {% block content %}
 <div class="container text-center mt-5">
-    <h2>Thank You for Your Feedback!</h2>
-    <p>Your feedback is important to us. We appreciate your time and valuable input.</p>
-    <p>Have a great day!</p>
+    <h2 class="mb-4">Thank You for Your Feedback!</h2>
+    <p class="lead">Your feedback is important to us. We appreciate your time and valuable input.</p>
+    <p class="lead">Have a great day!</p>
+    <div class="form-group text-center mt-4" id="signup-button">
+        <button class="btn btn-primary"><a class="btn btn-link" style="color: white;" type="submit" href="{% url 'home_user' %}" id="body-link-row">Log Out</a></button>
+    </div>
 </div>
 {% endblock %}

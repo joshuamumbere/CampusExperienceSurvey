@@ -1,0 +1,26 @@
+/* Add more custom styles as needed */
+
+/* Style for form card */
+.card {
+  border: none;
+  border-radius: 10px;
+}
+
+/* Add animation to button */
+.btn-primary {
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #4a90e2;
+}
+
+/* Add animation to input fields */
+.form-control {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
+}
