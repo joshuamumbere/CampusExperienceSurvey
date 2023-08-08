@@ -1,15 +1,24 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
-
 {% block content %}
-<div class="container">
-  <h2>Instructor Feedback</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <div class="text-center">
-      <button type="submit" class="btn btn-primary">Next</button>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="card shadow">
+        <div class="card-body">
+          <h2 class="card-title text-center mb-4">INSTRUCTOR FEEDBACK</h2>
+          <p class="text-center">Instructors need to be evaluated as well! Give us our feedback on how you found your instructors for the semester</p>
+          <form method="post" class="needs-validation" novalidate>
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary btn-lg mt-3">NEXT</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-  </form>
+  </div>
 </div>
 {% endblock %}

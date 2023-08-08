@@ -28,7 +28,7 @@ class CourseFeedbackForm(forms.ModelForm):
             'rating_instructor': 'Rate on a scale of 1 to 5 how well the course units were taught last semester',
             'comments_course': 'What are your thoughts on the course units taught?',
             'course_satisfaction': 'Were you satisfied with the individual assesment and final examinations on the course units taught last semester?',
-            'course_remarks': 'The course materials were helpful to you and added value to your career developmemnt',
+            'course_remarks': 'The course materials were helpful to you and added value to your career development',
             'suggestion': 'Any other suggestions(optional)',
         }
 
@@ -36,8 +36,8 @@ class CourseFeedbackForm(forms.ModelForm):
         help_texts = {
             'rating_instructor': '1 - Very Poorly, 2-Poorly, 3 -Neutral 4-Very Well  5 - Excellently',
             'comments_course': 'Provide any additional comments about the course.',
-            'q1_choice': 'Choose a response.',
-            'q2_choice': 'Choose a response.',
+            'select_course': 'Choose a response.',
+            'select_year': 'Choose a response.',
             'suggestion': 'Any suggestions or feedback you would like to share (optional).',
             'additional_rating': 'If applicable, provide any additional rating (optional).',
         }
@@ -60,8 +60,8 @@ class CourseFeedbackForm(forms.ModelForm):
             'course_unit',
             'rating_instructor',
             'comments_course',
-            'q1_choice',
-            'q2_choice',
+            'select_course',
+            'select_year',
             'suggestion',
             'additional_rating',
             Submit('submit', 'Next')
@@ -171,9 +171,8 @@ class CampusFeedbackForm(forms.ModelForm):
         self.helper.label_class = 'col-lg-2'
         self.helper.field_class = 'col-lg-10'
         self.helper.layout = Layout(
-            'student_name',
-            'q1_choice',
-            'q2_choice',
+            'campus_facilities',
+            'campus_resources',
             'comments_campus',
             'preferred_building',
             'visit_frequency',
