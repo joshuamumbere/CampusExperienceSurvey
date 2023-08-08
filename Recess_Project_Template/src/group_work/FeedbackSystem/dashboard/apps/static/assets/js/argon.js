@@ -1,24 +1,3 @@
-
-/*!
-
-=========================================================
-* Argon Dashboard - v1.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md)
-
-* Coded by www.creative-tim.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-
-
-
 //
 // Layout
 //
@@ -840,12 +819,18 @@ var BarsChart = (function() {
 
 		// Create chart
 		var ordersChart = new Chart($chart, {
-			type: 'bar',
+			type: 'doughnut',
 			data: {
-				labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+				labels: ['VeryDissatisfied','Dissatisfied','Neutral','Satisfied','Satisfied'],
 				datasets: [{
-					label: 'Sales',
-					data: [25, 20, 30, 22, 17, 29]
+					label: 'Satisfaction',
+					data: satisfactionData,
+					backgroundColor: [
+						'rgba(255, 12, 244, 0.2)',
+						'rgba(54, 45, 12, 0.2)',
+						'rgba(12, 234, 12, 0.2)',
+						'rgba(62, 45, 87, 0.2)',
+					],
 				}]
 			}
 		});
@@ -880,46 +865,12 @@ var SalesChart = (function() {
   function init($chart) {
 
     var salesChart = new Chart($chart, {
-      type: 'line',
-      options: {
-        scales: {
-          yAxes: [{
-            gridLines: {
-              lineWidth: 1,
-              color: Charts.colors.gray[900],
-              zeroLineColor: Charts.colors.gray[900]
-            },
-            ticks: {
-              callback: function(value) {
-                if (!(value % 10)) {
-                  return '$' + value + 'k';
-                }
-              }
-            }
-          }]
-        },
-        tooltips: {
-          callbacks: {
-            label: function(item, data) {
-              var label = data.datasets[item.datasetIndex].label || '';
-              var yLabel = item.yLabel;
-              var content = '';
-
-              if (data.datasets.length > 1) {
-                content += '<span class="popover-body-label mr-auto">' + label + '</span>';
-              }
-
-              content += '<span class="popover-body-value">$' + yLabel + 'k</span>';
-              return content;
-            }
-          }
-        }
-      },
+      type: 'bar',
       data: {
-        labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        labels: ['COCIS','Library','Auditorium'],
         datasets: [{
-          label: 'Performance',
-          data: [0, 20, 10, 30, 15, 40, 20, 60, 60]
+          label: 'Preferred Building',
+          data: prefbuilding_data
         }]
       }
     });
