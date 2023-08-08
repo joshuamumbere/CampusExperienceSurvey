@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'FeedbackSystem.dashboard.apps.home',
 
     #own apps
-    'FeedbackSystem.userside.Authentication.apps',
+    'FeedbackSystem.userside.Authentication',
     'crispy_forms',
     'bootstrap4',
 
