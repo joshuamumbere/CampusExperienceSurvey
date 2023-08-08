@@ -1,65 +1,15 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container">
-    <h2>Instructor Feedback</h2>
-    <form method="post" class="feedback-form">
-        {% csrf_token %}
-        <div class="row">
-            <div class="col-md-12">
-                <div class="question">
-                    <p>1. How clear were the instructor's explanations?</p>
-                    <div class="likert-scale">
-                        <label><input type="radio" name="q1" value="5">Very Clear</label>
-                        <label><input type="radio" name="q1" value="4">Clear</label>
-                        <label><input type="radio" name="q1" value="3">Neutral</label>
-                        <label><input type="radio" name="q1" value="2">Unclear</label>
-                        <label><input type="radio" name="q1" value="1">Very Unclear</label>
-                    </div>
-                </div>
-                <div class="question">
-                    <p>2. How approachable was the instructor for questions and help?</p>
-                    <div class="likert-scale">
-                        <label><input type="radio" name="q2" value="5">Very Clear</label>
-                        <label><input type="radio" name="q2" value="4">Clear</label>
-                        <label><input type="radio" name="q2" value="3">Neutral</label>
-                        <label><input type="radio" name="q2" value="2">Unclear</label>
-                        <label><input type="radio" name="q2" value="1">Very Unclear</label>
-                    </div>
-                </div>
-                <div class="question">
-                    <p>3. How well did the instructor encourage class participation?</p>
-                    <div class="likert-scale">
-                        <label><input type="radio" name="q3" value="5">Very Clear</label>
-                        <label><input type="radio" name="q3" value="4">Clear</label>
-                        <label><input type="radio" name="q3" value="3">Neutral</label>
-                        <label><input type="radio" name="q3" value="2">Unclear</label>
-                        <label><input type="radio" name="q3" value="1">Very Unclear</label>
-                    </div>
-                </div>
-                <div class="question">
-                    <p>4. How effective was the instructor in delivering the course material?</p>
-                    <div class="likert-scale">
-                        <label><input type="radio" name="q4" value="5">Very Clear</label>
-                        <label><input type="radio" name="q4" value="4">Clear</label>
-                        <label><input type="radio" name="q4" value="3">Neutral</label>
-                        <label><input type="radio" name="q4" value="2">Unclear</label>
-                        <label><input type="radio" name="q4" value="1">Very Unclear</label>
-                    </div>
-                </div>
-                <div class="question">
-                    <p>5. How fair were the instructor's grading and evaluation methods?</p>
-                    <div class="likert-scale">
-                        <label><input type="radio" name="q5" value="5">Very Clear</label>
-                        <label><input type="radio" name="q5" value="4">Clear</label>
-                        <label><input type="radio" name="q5" value="3">Neutral</label>
-                        <label><input type="radio" name="q5" value="2">Unclear</label>
-                        <label><input type="radio" name="q5" value="1">Very Unclear</label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary mt-3">Submit</button>
-    </form>
+  <h2>Instructor Feedback</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Next</button>
+    </div>
+  </form>
 </div>
 {% endblock %}
