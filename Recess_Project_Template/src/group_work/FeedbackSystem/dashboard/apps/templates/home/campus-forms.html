@@ -28,16 +28,36 @@
         </div>
         <div class="card-body">
           {% for data in campusformdata %}
-          <div class="formdata"
-            style="width: 500px; display:flex; flex-direction: column; background: rgb(240, 240, 240); margin-top: 10px; border-radius: 10px;">
-            <div class="div" style="padding: 3px 10px; ">
-              <h4>Preferred Building: <span style="font-weight: 300;">{{data.preferred_building}}</span></h4>
+          <div class="formdata bg-light" 
+            style=" color:white; width: 500px; margin-top: 10px; border-radius: 10px;">
+            <div style=" display:flex; justify-content: center;">
+              <div class="div" style="padding: 3px 10px; ">
+                <h4><span style="font-weight: 600;">{{data.preferred_building}}</span></h4>
+              </div>
             </div>
-            <div class="div" style="padding: 3px 10px; ">
-              <h4>Facility Rating: <span style="font-weight: 300;">{{data.campus_facilities}}</span></h4>
-            </div>
-            <div class="div" style="padding: 3px 10px; ">
-              <h4>Cleanliness: <span style="font-weight: 300;">{{data.cleanliness_maintanance}}</span></h4>
+            <div class="form-info" style="width: 500px; display:flex; flex-direction: row;">
+              <div class="col-lg-6">
+                <div class="div" style="padding: 3px 10px; ">
+                  <h4>Facility Rating: <span style="font-weight: 300;">{{data.campus_facilities}}</span></h4>
+                </div>
+                <div class="div" style="padding: 3px 10px; ">
+                  <h4>Cleanliness: <span style="font-weight: 300;">{{data.cleanliness_maintanance}}</span></h4>
+                </div>
+                <div class="div" style="padding: 3px 10px; ">
+                  <h4>Resource Accessibilty: <span style="font-weight: 300;">{{data.campus_resources}}</span></h4>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="div" style="padding: 3px 10px; ">
+                  <h4>Visit Frequency: <span style="font-weight: 300;">{{data.visit_frequency}}</span></h4>
+                </div>
+                <div class="div" style="padding: 3px 10px; ">
+                  <h4>Security Rating: <span style="font-weight: 300;">{{data.campus_security}}</span></h4>
+                </div>
+                <div class="div" style="padding: 3px 10px; ">
+                  <h4>Comments: <span style="font-weight: 300;">{{data.comments_campus}}</span></h4>
+                </div>
+              </div>
             </div>
           </div>
           {% endfor %}
