@@ -24,20 +24,20 @@
     <div class="col">
       <div class="card shadow">
         <div class="card-header bg-transparent">
-          <h3 class="mb-0">Course Forms</h3>
+          <h3 class="mb-0">Instructor Forms</h3>
         </div>
         <div class="card-body">
-          {% for data in courseformdata %}
+          {% for data in instructorformdata %}
           <div class="formdata"
             style="width: 500px; display:flex; flex-direction: column; background: rgb(240, 240, 240); margin-top: 10px; border-radius: 10px;">
             <div class="div" style="padding: 3px 10px; ">
-              <h4>Name: <span style="font-weight: 300;">{{data.student_name}}</span></h4>
+              <h4>Name: <span style="font-weight: 300;">{{data.instructor_name}}</span></h4>
             </div>
             <div class="div" style="padding: 3px 10px; ">
-              <h4>Course: <span style="font-weight: 300;">{{data.select_course}}</span></h4>
+              <h4>Instructor Rating: <span style="font-weight: 300;">{{data.rating_instructor}}</span></h4>
             </div>
             <div class="div" style="padding: 3px 10px; ">
-              <h4>Year: <span style="font-weight: 300;">{{data.select_year}}</span></h4>
+              <h4>Comments: <span style="font-weight: 300;">{{data.comments_instructor}}</span></h4>
             </div>
           </div>
           {% endfor %}
