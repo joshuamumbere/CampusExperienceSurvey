@@ -72,7 +72,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Teachers</h5>
-                      <span class="h2 font-weight-bold mb-0">924</span>
+                      <span class="h2 font-weight-bold mb-0">5</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
@@ -90,7 +90,7 @@
                   <div class="row">
                     <div class="col">
                       <h5 class="card-title text-uppercase text-muted mb-0">Rating</h5>
-                      <span class="h2 font-weight-bold mb-0">49</span>
+                      <span class="h2 font-weight-bold mb-0">{{campusrating}}%</span>
                     </div>
                     <div class="col-auto">
                       <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
@@ -111,7 +111,7 @@
       <div class="row">
         <div class="col-xl-8">
           <div class="card bg-default">
-            <div class="card-header bg-transparent">
+            <div class="card-header bg-gradient-green">
               <div class="row align-items-center">
                 <div class="col">
                   <h6 class="text-light text-uppercase ls-1 mb-1">Overview</h6>
@@ -129,14 +129,14 @@
               <!-- Chart -->
               <div class="chart">
                 <!-- Chart wrapper -->
-                <canvas id="chart-sales-dark" class="chart-canvas"></canvas>
+                <canvas id="building_chart" class="chart-canvas"></canvas>
               </div>
             </div>
           </div>
         </div>
         <div class="col-xl-4">
           <div class="card">
-            <div class="card-header bg-transparent">
+            <div class="card-header bg-gradient-primary">
               <div class="row align-items-center">
                 <div class="col">
                   <h6 class="text-uppercase text-muted ls-1 mb-1">Course</h6>
@@ -147,7 +147,50 @@
             <div class="card-body">
               <!-- Chart -->
               <div class="chart">
-                <canvas id="chart-bars" class="chart-canvas"></canvas>
+                <canvas id="course_chart" class="chart-canvas"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4">
+          <div class="card">
+            <div class="card-header bg-gradient-orange">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h6 class="text-uppercase text-muted ls-1 mb-1">Campus</h6>
+                  <h5 class="h3 mb-0">Overall Satisfaction</h5>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <!-- Chart -->
+              <div class="chart">
+                <canvas id="campus_chart" class="chart-canvas"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-8">
+          <div class="card bg-default">
+            <div class="card-header bg-gradient-red">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h6 class="text-light text-uppercase ls-1 mb-1">Overview</h6>
+                  <h5 class="h3 text-white mb-0">Sales value</h5>
+                </div>
+                <div class="col">
+                  <ul class="nav nav-pills justify-content-end">
+                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales-dark" data-prefix="$" data-suffix="k">
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <!-- Chart -->
+              <div class="chart">
+                <!-- Chart wrapper -->
+                <canvas id="instructor_chart" class="chart-canvas"></canvas>
               </div>
             </div>
           </div>
@@ -167,6 +210,10 @@
     var satisfactionData = "{{ satisfaction_data|safe }}";
     var prefbuilding_labels = "{{ prefbuilding_labels|safe }}";
     var prefbuilding_data = "{{ prefbuilding_data|safe }}";
+    var campus_satisfaction_labels = "{{ campus_satisfaction_labels|safe }}";
+    var campus_satisfactionData = "{{ campus_satisfaction_data|safe }}";
+    var instructor_satisfaction_labels = "{{ instructor_satisfaction_labels|safe }}";
+    var instructor_satisfactionData = "{{ instructor_satisfaction_data|safe }}";
   </script>
   <script src="/static/assets/vendor/chart.js/dist/Chart.min.js"></script>
   <script src="/static/assets/vendor/chart.js/dist/Chart.extension.js"></script>

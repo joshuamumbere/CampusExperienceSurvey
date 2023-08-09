@@ -807,24 +807,25 @@ var BarsChart = (function() {
 	// Variables
 	//
 
-	var $chart = $('#chart-bars');
-
+	var $chartCourse = $('#course_chart');
+	var $chartCampus = $('#campus_chart');
 
 	//
 	// Methods
 	//
+	console.log(campus_satisfactionData)
 
 	// Init chart
-	function initChart($chart) {
+	function initChart($chart, type, labels, label, data) {
 
 		// Create chart
-		var ordersChart = new Chart($chart, {
-			type: 'doughnut',
+		var dashboardChart = new Chart($chart, {
+			type: type,
 			data: {
-				labels: ['VeryDissatisfied','Dissatisfied','Neutral','Satisfied','Satisfied'],
+				labels: labels,
 				datasets: [{
-					label: 'Satisfaction',
-					data: satisfactionData,
+					label: label,
+					data: data,
 					backgroundColor: [
 						'rgba(255, 12, 244, 0.2)',
 						'rgba(54, 45, 12, 0.2)',
@@ -836,13 +837,17 @@ var BarsChart = (function() {
 		});
 
 		// Save to jQuery object
-		$chart.data('chart', ordersChart);
+		$chart.data('chart', dashboardChart);
 	}
 
 
 	// Init chart
-	if ($chart.length) {
-		initChart($chart);
+	if ($chartCourse.length) {
+		initChart($chartCourse, 'doughnut', ['Very Satisfied', 'Satisfied', 'Neutral', 'Disatisfied', 'Very Dissatisfied'], 'Course Satisfaction', satisfactionData);
+	}
+
+	if ($chartCampus.length) {
+		initChart($chartCampus, 'bar', ['Very Satisfied', 'Satisfied', 'Neutral', 'Disatisfied', 'Very Dissatisfied'], 'Campus Satisfaction', campus_satisfactionData);
 	}
 
 })();
@@ -853,39 +858,44 @@ var BarsChart = (function() {
 // Sales chart
 //
 
-var SalesChart = (function() {
+var DarkChart = (function() {
 
   // Variables
 
-  var $chart = $('#chart-sales-dark');
-
+  var $chartBuilding = $('#building_chart');
+  var $chartInstructor = $('#instructor_chart');
+  
 
   // Methods
 
-  function init($chart) {
+  function init($chart, type, labels, label, data) {
 
-    var salesChart = new Chart($chart, {
-      type: 'bar',
+    var darkChart = new Chart($chart, {
+      type: type,
       data: {
-        labels: ['COCIS','Library','Auditorium'],
+        labels: labels,
         datasets: [{
-          label: 'Preferred Building',
-          data: prefbuilding_data
+          label: label,
+          data: data
         }]
       }
     });
 
     // Save to jQuery object
 
-    $chart.data('chart', salesChart);
+    $chart.data('chart', darkChart);
 
   };
 
 
   // Events
 
-  if ($chart.length) {
-    init($chart);
+  if ($chartBuilding.length) {
+    init($chartBuilding, 'bar', ['COCIS','Library','Auditorium'], 'Preferred Building', prefbuilding_data);
+  }
+
+  if ($chartInstructor.length) {
+    init($chartInstructor, 'line', ['Dr Mumbere Alice','Dr Agaba Martha','Professor Rogers Ntanda', 'Dr Ariho Geoffrey', 'Dr Birimumaaso Conrad'], 'Preferred Building', instructor_satisfactionData);
   }
 
 })();
