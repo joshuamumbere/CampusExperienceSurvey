@@ -810,6 +810,9 @@ var BarsChart = (function() {
 	var $chartCourse = $('#course_chart');
 	var $chartCampus = $('#campus_chart');
 
+	// Transform JSON data to arrays
+	var satisfactionArray = JSON.parse(satisfactionData)
+	var campus_satisfactionArray = JSON.parse(campus_satisfactionData)
 	//
 	// Methods
 	//
@@ -826,10 +829,11 @@ var BarsChart = (function() {
 					label: label,
 					data: data,
 					backgroundColor: [
-						'rgba(255, 12, 244, 0.2)',
-						'rgba(54, 45, 12, 0.2)',
-						'rgba(12, 234, 12, 0.2)',
-						'rgba(62, 45, 87, 0.2)',
+						'rgba(0, 255, 0, 0.8)',
+						'rgba(144, 238, 144, 0.8)',
+						'rgba(128, 128, 128, 0.8)',
+						'rgba(255, 192, 192, 0.8)',
+						'rgba(255, 0, 0, 0.8)',
 					],
 				}]
 			}
@@ -842,11 +846,11 @@ var BarsChart = (function() {
 
 	// Init chart
 	if ($chartCourse.length) {
-		initChart($chartCourse, 'doughnut', ['Very Satisfied', 'Satisfied', 'Neutral', 'Disatisfied', 'Very Dissatisfied'], 'Course Satisfaction', satisfactionData);
+		initChart($chartCourse, 'doughnut', ['Very Satisfied', 'Satisfied', 'Neutral', 'Disatisfied', 'Very Dissatisfied'], 'Course Satisfaction', satisfactionArray);
 	}
 
 	if ($chartCampus.length) {
-		initChart($chartCampus, 'bar', ['Very Satisfied', 'Satisfied', 'Neutral', 'Disatisfied', 'Very Dissatisfied'], 'Campus Satisfaction', campus_satisfactionData);
+		initChart($chartCampus, 'doughnut', ['Very Satisfied', 'Satisfied', 'Neutral', 'Disatisfied', 'Very Dissatisfied'], 'Campus Satisfaction', campus_satisfactionArray);
 	}
 
 })();
@@ -864,6 +868,9 @@ var DarkChart = (function() {
   var $chartBuilding = $('#building_chart');
   var $chartInstructor = $('#instructor_chart');
   
+  // Transform JSON data to arrays
+	var prefbuildingArray = JSON.parse(prefbuilding_data)
+	var instructor_satisfactionArray = JSON.parse(instructor_satisfactionData)
   // Methods
 
   function init($chart, type, labels, label, data) {
@@ -874,7 +881,14 @@ var DarkChart = (function() {
         labels: labels,
         datasets: [{
           label: label,
-          data: data
+          data: data,
+		  backgroundColor: [
+			'rgba(255, 165, 0, 0.8)',
+			'rgba(128, 0, 128, 0.8)',
+			'rgba(128, 128, 128, 0.8)',
+			'rgba(0, 0, 155, 0.8)',
+			'rgba(255, 0, 0, 0.8)',
+		  ],
         }]
       },
 	  options: {
@@ -896,11 +910,11 @@ var DarkChart = (function() {
   // Events
 
   if ($chartBuilding.length) {
-    init($chartBuilding, 'bar', ['COCIS','Library','Auditorium'], 'Preferred Building', prefbuilding_data);
+    init($chartBuilding, 'bar', ['COCIS','Library','Auditorium'], 'Preferred Building', prefbuildingArray);
   }
 
   if ($chartInstructor.length) {
-    init($chartInstructor, 'bar', ['Dr Mumbere Alice','Dr Agaba Martha','Professor Rogers Ntanda', 'Dr Ariho Geoffrey', 'Dr Birimumaaso Conrad'], 'Instructor Rating', instructor_satisfactionData);
+    init($chartInstructor, 'bar', ['Dr Mumbere Alice','Dr Agaba Martha','Professor Rogers Ntanda', 'Dr Ariho Geoffrey', 'Dr Birimumaaso Conrad'], 'Instructor Rating', instructor_satisfactionArray);
   }
 
 })();
