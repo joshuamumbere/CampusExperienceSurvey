@@ -1,3 +1,4 @@
+import json
 from django import template
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, HttpResponseRedirect
@@ -41,31 +42,35 @@ def index(request):
     # Prepare data for the satisfaction chart
     satisfaction_labels = [item['course_satisfaction'] for item in satisfaction_counts]
     satisfaction_data = [item['count'] for item in satisfaction_counts]
-    print(satisfaction_data)
+    satisfaction_data_json = json.dumps(satisfaction_data)
+
 
     # Prepare data for the preferred building chart
     prefbuilding_labels = [item['preferred_building'] for item in fav_building_counts]
     prefbuilding_data = [item['count'] for item in fav_building_counts]
+    prefbuilding_data_json = json.dumps(prefbuilding_data)
 
     # Prepare data for the campus satisfaction chart
     campus_satisfaction_labels = [item['campus_facilities'] for item in campus_satisfaction_counts]
     campus_satisfaction_data = [item['count'] for item in campus_satisfaction_counts]
+    campus_satisfaction_data_json = json.dumps(campus_satisfaction_data)
 
     # Prepare data for the instructor satisfaction chart
     instructor_satisfaction_labels = [item['rating_instructor'] for item in instructor_satisfaction_counts]
     instructor_satisfaction_data = [item['count'] for item in instructor_satisfaction_counts]
+    instructor_satisfaction_data_json = json.dumps(instructor_satisfaction_data)
 
     # Add to context
     context['formsfilledcount'] = formsfilledcount
     context['studentcount'] = studentcount
     context['satisfaction_labels'] = satisfaction_labels
-    context['satisfaction_data'] = satisfaction_data
+    context['satisfaction_data'] = satisfaction_data_json
     context['prefbuilding_labels'] = prefbuilding_labels
-    context['prefbuilding_data'] = prefbuilding_data
+    context['prefbuilding_data'] = prefbuilding_data_json
     context['campus_satisfaction_labels'] = campus_satisfaction_labels
-    context['campus_satisfaction_data'] = campus_satisfaction_data
+    context['campus_satisfaction_data'] = campus_satisfaction_data_json
     context['instructor_satisfaction_labels'] = instructor_satisfaction_labels
-    context['instructor_satisfaction_data'] = instructor_satisfaction_data
+    context['instructor_satisfaction_data'] = instructor_satisfaction_data_json
     context['campusrating'] = average_percentage
 
     html_template = loader.get_template('home/index.html')
