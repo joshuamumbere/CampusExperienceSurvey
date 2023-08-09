@@ -28,16 +28,42 @@
         </div>
         <div class="card-body">
           {% for data in courseformdata %}
-          <div class="formdata"
-            style="width: 500px; display:flex; flex-direction: column; background: rgb(240, 240, 240); margin-top: 10px; border-radius: 10px;">
-            <div class="div" style="padding: 3px 10px; ">
-              <h4>Name: <span style="font-weight: 300;">{{data.student_name}}</span></h4>
+          <div class="formdata bg-light" 
+            style=" color:white; width: 500px; margin-top: 10px; border-radius: 10px;">
+            <div style=" display:flex; justify-content: center;">
+              <div class="div" style="padding: 3px 10px; ">
+                <h4><span style="font-weight: 600;">{{data.student_name}}</span></h4>
+              </div>
             </div>
-            <div class="div" style="padding: 3px 10px; ">
-              <h4>Course: <span style="font-weight: 300;">{{data.select_course}}</span></h4>
-            </div>
-            <div class="div" style="padding: 3px 10px; ">
-              <h4>Year: <span style="font-weight: 300;">{{data.select_year}}</span></h4>
+            <div class="form-info" style="width: 500px; display:flex; flex-direction: row;">
+              <div class="col-lg-6">
+                <div class="div" style="padding: 3px 10px; ">
+                  <h4>Course: <span style="font-weight: 300;">{{data.select_course}}</span></h4>
+                </div>
+                <div class="div" style="padding: 3px 10px; ">
+                  <h4>Year: <span style="font-weight: 300;">{{data.select_year}}</span></h4>
+                </div>
+                <div class="div" style="padding: 3px 10px; ">
+                  <h4>Instructor Rating: <span style="font-weight: 300;">{{data.rating_instructor}}</span></h4>
+                </div>
+                <div class="div" style="padding: 3px 10px; ">
+                  <h4>Course Satisfaction: <span style="font-weight: 300;">{{data.course_satisfaction}}</span></h4>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="div" style="padding: 3px 10px; ">
+                  <h4>Favourite Course: <span style="font-weight: 300;">{{data.course_unit}}</span></h4>
+                </div>
+                <div class="div" style="padding: 3px 10px; ">
+                  <h4>Comments: <span style="font-weight: 300;">{{data.comments_course}}</span></h4>
+                </div>
+                <div class="div" style="padding: 3px 10px; ">
+                  <h4>Remarks: <span style="font-weight: 300;">{{data.course_remarks}}</span></h4>
+                </div>
+                <div class="div" style="padding: 3px 10px; ">
+                  <h4>Suggestions: <span style="font-weight: 300;">{{data.suggestion}}</span></h4>
+                </div>
+              </div>
             </div>
           </div>
           {% endfor %}

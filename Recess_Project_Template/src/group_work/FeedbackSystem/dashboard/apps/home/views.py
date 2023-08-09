@@ -41,7 +41,7 @@ def index(request):
     # Prepare data for the satisfaction chart
     satisfaction_labels = [item['course_satisfaction'] for item in satisfaction_counts]
     satisfaction_data = [item['count'] for item in satisfaction_counts]
-    satisfaction_data = list(satisfaction_data)
+    print(satisfaction_data)
 
     # Prepare data for the preferred building chart
     prefbuilding_labels = [item['preferred_building'] for item in fav_building_counts]

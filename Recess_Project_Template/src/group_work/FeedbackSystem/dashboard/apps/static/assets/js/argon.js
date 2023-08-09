@@ -813,7 +813,6 @@ var BarsChart = (function() {
 	//
 	// Methods
 	//
-	console.log(campus_satisfactionData)
 
 	// Init chart
 	function initChart($chart, type, labels, label, data) {
@@ -865,7 +864,6 @@ var DarkChart = (function() {
   var $chartBuilding = $('#building_chart');
   var $chartInstructor = $('#instructor_chart');
   
-
   // Methods
 
   function init($chart, type, labels, label, data) {
@@ -878,7 +876,14 @@ var DarkChart = (function() {
           label: label,
           data: data
         }]
-      }
+      },
+	  options: {
+			scales: {
+				y: {
+					beginAtZero: false, // Adjust this based on your needs
+				},
+			},
+		},
     });
 
     // Save to jQuery object
@@ -895,12 +900,13 @@ var DarkChart = (function() {
   }
 
   if ($chartInstructor.length) {
-    init($chartInstructor, 'line', ['Dr Mumbere Alice','Dr Agaba Martha','Professor Rogers Ntanda', 'Dr Ariho Geoffrey', 'Dr Birimumaaso Conrad'], 'Preferred Building', instructor_satisfactionData);
+    init($chartInstructor, 'bar', ['Dr Mumbere Alice','Dr Agaba Martha','Professor Rogers Ntanda', 'Dr Ariho Geoffrey', 'Dr Birimumaaso Conrad'], 'Instructor Rating', instructor_satisfactionData);
   }
 
 })();
 
 //
+// 
 // Bootstrap Datepicker
 //
 
