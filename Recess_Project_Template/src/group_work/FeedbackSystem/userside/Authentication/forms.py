@@ -6,7 +6,7 @@ from django import forms
 class UserRegisterForm(UserCreationForm):
     username= forms.CharField(max_length=50,required=True)
     email = forms.EmailField()
-    student_number = forms.CharField(max_length=10, required=True)  # Adjust max_length as needed
+    student_number = forms.IntegerField( required=True)  # Adjust max_length as needed
     YEAR_CHOICES = [
         ('One', 'Year One'),
         ('Two', 'Year Two'),
