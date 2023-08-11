@@ -1,7 +1,7 @@
 
 
 from django.db import models
-
+from django.core.validators import *
 # Model for Course feedback
 
 
@@ -21,7 +21,9 @@ class CourseFeedback(models.Model):
         'courseunit_1', 'Mobile Programming'), ('courseunit_2', 'Requirements Engineering'), ('courseunit_3', 'Artificial Intelligence'), ('courseunit_4', 'Data Communication'), ('courseunit_5', 'Object Oriented Programming'), ('courseunit_6', 'Computer Networks'), ('courseunit_7', 'Operating Systems'), ('courseunit_8', 'Database Management'), ('courseunit_9', 'Emerging Web Technologies'), ('courseunit_10', 'Data Structures and Algorithms'),])
 
     # Rating field (choices: 1 to 5)
-    rating_instructor = models.PositiveSmallIntegerField()
+    rating_instructor = models.PositiveSmallIntegerField(
+        validators=[MinValueValidator(1), MaxValueValidator(5)]
+    )
 
     # Textarea field
     comments_course = models.TextField()
